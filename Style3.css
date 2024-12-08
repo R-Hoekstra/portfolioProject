@@ -310,12 +310,116 @@ section:nth-child(even) {
   }
 }
 
-/* Mobile-Specific Adjustment for Header Behavior */
-/* @media (max-width: 768px) {
-  #header {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    background-color: rgba(244, 244, 244, 0.9) !important; 
-    pointer-events: auto !important;
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+
+  /* Title Styling */
+  #name-container a {
+    color: #333 !important; /* Ensure the title is dark on light backgrounds */
   }
-} */
+
+  #name-container a:hover .name {
+    color: rgb(127, 23, 52); /* Title color on hover */
+  }
+
+  /* Menu Overlay */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0; /* Initially, no width */
+    height: 100%; /* Full height of the screen */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1; /* Behind the menu but in front of the main content */
+    transition: width 0.3s ease; /* Smooth transition */
+  }
+
+  .menu-overlay.active {
+    width: 125px; /* Show the overlay when active */
+  }
+
+  /* Navigation Menu */
+  #wb_CssMenu1 {
+    position: absolute;
+    top: 70%;
+    right: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav-link {
+    font-size: 1.2em;
+    color: rgba(244, 244, 244);
+  }
+
+  .nav-link:hover {
+    color: rgb(127, 23, 52);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Stronger and darker shadow */
+  }
+
+  /* Menu toggle button */
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    position: absolute;
+    right: 40px;
+    top: 50%; /* Position at the middle of the header */
+    transform: translateY(-50%);
+    z-index: 100; /* Ensure toggle is on top */
+  }
+
+  .menu-toggle::before {
+    content: "☰";
+  }
+
+  .menu-toggle.active::before {
+    content: "✖";
+    color: rgba(244, 244, 244);
+  }
+
+  /* Hide header when scrolling down and show when scrolling up */
+  #header.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  #header.visible {
+    opacity: 1 !important;
+    background-color: rgba(244, 244, 244, 0.9) !important; /* Light background */
+  }
+
+  /* Make sure name container is centered */
+  #name-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half its own width and height */
+    text-align: center;
+  }
+
+  /* Adjust sections */
+  section {
+    padding-top: 120px; /* Allow space for fixed header */
+    color: white;
+  }
+}
