@@ -238,7 +238,7 @@ section:nth-child(even) {
     top: 0;
     right: 0;
     width: 0; /* Initially, no width */
-    height: 100%; /* Full height of the screen */
+    height: 100vh; /* Full height of the screen */
     background-color: #333; 
     z-index: 1; /* Behind the menu but in front of the main content */
     transition: width 0.3s ease; /* Smooth transition */
@@ -311,11 +311,11 @@ section:nth-child(even) {
 }
 
 /* Mobile-Specific Adjustment for Header Behavior */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #header {
     opacity: 1 !important;
     transform: translateY(0) !important;
-    background-color: rgba(244, 244, 244, 0.9) !important; /* Keep visible on mobile */
+    background-color: rgba(244, 244, 244, 0.9) !important; 
     pointer-events: auto !important;
   }
-}
+} */
