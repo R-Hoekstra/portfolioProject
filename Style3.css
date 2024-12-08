@@ -315,11 +315,21 @@ section:nth-child(even) {
 
   /* Title Styling */
   #name-container a {
-    color: #333 !important; /* Ensure the title is dark on light backgrounds */
+    color: #333; /* Ensure the title is dark on light backgrounds */
   }
 
   #name-container a:hover .name {
     color: rgb(127, 23, 52); /* Title color on hover */
+  }
+
+  /* Adjust header background and text color when the background is dark */
+  #header.visible {
+    background-color: rgba(244, 244, 244, 0.9) !important; /* Light background */
+  }
+
+  /* Ensure the title color doesn't get overridden */
+  .name {
+    color: #333; /* Dark title by default */
   }
 
   /* Menu Overlay */
