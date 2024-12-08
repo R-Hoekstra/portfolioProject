@@ -309,13 +309,3 @@ section:nth-child(even) {
     display: flex; /* Keep the horizontal menu visible */
   }
 }
-
-/* Mobile-Specific Adjustment for Header Behavior */
-/* @media (max-width: 768px) {
-  #header {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    background-color: rgba(244, 244, 244, 0.9) !important; 
-    pointer-events: auto !important;
-  }
-} */
